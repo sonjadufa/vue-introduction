@@ -2,22 +2,46 @@
 <html>
 <head>
 	<title>Main</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
 </head>
 <body>
+	<label class="label">Vue-Introduction</label>
 	<div id="app">
-		<p>{{ message }}</p>
+		<div class="field">
+  		<label class="label">Fyrsta nafn</label>
+  		<div class="control">
+   		<input class="input" type="text" v-model="message" placeholder="Fyrsta Nafn">
+  	</div>
+</div>
+
+	<div class="field">
+  		<label class="label">Eftir nafn</label>
+  		<div class="control">
+   		<input class="input" type="text" v-model="message2" placeholder="Eftir Nafn">
+  	</div>
+</div>
+		
+		
+		<p>Nafn þitt er: {{ message }} {{message2}} </p>
+		
+		<p>
+			<span>Nafn þitt er:</span>
+			<span v-text="message+' '+message2"></span>
+		</p>
 	</div>
 
 	
-	<h1>Okei</h1>
-	<p>hæ</p>
+	
+	
 
 	<script src="https://unpkg.com/vue"></script>
 	<script type="text/javascript">
 		var app = new Vue({
 			el: '#app',
 			data: {
-    			message: 'Hello Vue!'
+    			message: '',
+    			message2: ''
   			}
 		})
 	</script>
